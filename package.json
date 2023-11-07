@@ -1,36 +1,41 @@
 {
-  "name": "@aux4/",
-  "version": "0.0.1",
-  "description": "",
-  "main": "index.js",
-  "preferGlobal": true,
-  "bin": {
-    "aux4-": "bin/executable.js"
-  },
+	"name": "@aux4/man",
+	"version": "0.0.1",
+	"description": "Aux4 Manual",
+	"main": "index.js",
+	"preferGlobal": true,
+	"bin": {
+		"aux4-man": "bin/executable.js"
+	},
   "scripts": {
-    "test": "jest"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@github.com/aux4/template.git"
-  },
-  "keywords": [
-    "aux4",
-    "cli"
-  ],
-  "author": "Aux4 Team",
-  "license": "Apache-2.0",
-  "bugs": {
-    "url": "https://github.com/aux4/template/issues"
-  },
-  "homepage": "https://aux4.io",
-  "funding": "https://aux4.io/donate",
-  "dependencies": {
-    "@aux4/config": "^1.0.2",
-    "@aux4/engine": "^1.0.31",
-    "@aux4/input": "^0.0.3"
-  },
-  "devDependencies": {
-    "jest": "^29.7.0"
-  }
+    "test": "aux4-test run",
+    "coverage": "aux4-test coverage"
+  },	
+	"repository": {
+		"type": "git",
+		"url": "git+ssh://git@github.com/aux4/man.git"
+	},
+	"keywords": [
+		"aux4",
+		"cli",
+		"manual"
+	],
+	"author": "Aux4 Team",
+	"license": "Apache-2.0",
+	"bugs": {
+		"url": "https://github.com/aux4/man/issues"
+	},
+	"homepage": "https://aux4.io",
+	"funding": "https://aux4.io/donate",
+	"dependencies": {
+		"@aux4/config": "^1.0.2",
+		"@aux4/engine": "^1.0.31",
+		"@aux4/input": "^0.0.3",
+		"keypress": "^0.2.1",
+		"markdown-it": "^13.0.2",
+		"markdown-it-terminal": "^0.4.0"
+	},
+	"devDependencies": {
+		"@aux4/test": "^0.0.18"
+	}
 }

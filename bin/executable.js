@@ -1,23 +1,37 @@
 #!/usr/bin/env node
 
 const { Engine } = require("@aux4/engine");
+const Manual = require("../lib/Manual");
 
-process.title = "aux4-template";
+process.title = "aux4-man";
 
 const config = {
   profiles: [
     {
       name: "main",
       commands: [
-        {
-          name: "",
-          execute: [],
+				{
+ 					name: "aux4",
+          execute: [
+					  "profile:aux4"
+          ]
+				}
+      ]
+    },
+		{
+			name: "aux4",
+			commands: [
+				{
+          name: "man",
+          execute: async () => {
+            await Manual.read();
+          },
           help: {
             text: ""
           }
         }
-      ]
-    }
+			]
+		}
   ]
 };
 
@@ -29,7 +43,7 @@ const config = {
   try {
     await engine.run(args);
   } catch (e) {
-    console.error(e.message.red);
+    console.error(e.message.red, e);
     process.exit(1);
   }
 })();
